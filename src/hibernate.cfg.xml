@@ -6,6 +6,7 @@
 <hibernate-configuration>
 
     <session-factory>
+        <!-- Uzupełnij zgodnie z własną bazą danych: patrz JDBC" -->
         <property name="hbm2ddl.auto">update</property>
         <property name="dialect">org.hibernate.dialect.PostgreSQL82Dialect</property>
         <property name="connection.url">jdbc:postgresql://localhost/library</property>
@@ -14,7 +15,6 @@
         <property name="connection.driver_class">org.postgresql.Driver</property>
         <property name="show_sql">true</property>
         <mapping class="pl.sdaacademy.model.Author"/>
-        <mapping class="pl.sdaacademy.model.Book"/>
     </session-factory>
 
 </hibernate-configuration>

@@ -1,12 +1,25 @@
 package pl.sdaacademy.model;
 
+import org.hibernate.annotations.GenericGenerator;
+
+import javax.persistence.*;
+
+@Entity
+@Table( name = "authors" )
 public class Author extends BaseModel {
 
     public static final String TABLE_NAME = "Author";
 
+    @Id
+    @GeneratedValue(generator="system-uuid")
+    @GenericGenerator(name="system-uuid", strategy = "uuid")
+    @Column(name = "author_id")
     private String id;
+    @Column(name = "fist_name")
     private String firstName;
+    @Column(name = "last_name")
     private String lastName;
+    @Column(name = "year_of_birth")
     private int yearOfBirth;
 
     public Author() {
